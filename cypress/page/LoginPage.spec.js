@@ -1,15 +1,15 @@
-class LoginPage{
+class LoginPage {
 
-    userNameField(data){
-        cy.xpath('//input[@data-qa="signup-name"]').type(data.userName);
+    getuserNameField(data) {
+        return cy.xpath('//input[@data-qa="signup-name"]')
     }
 
-    emailField(data){
-        cy.xpath('//input[@data-qa="signup-email"]').type(data.email);
+    getemailField(data) {
+        return cy.xpath('//input[@data-qa="signup-email"]')
     }
 
-    signUpButton(){
-        cy.xpath('//button[@data-qa="signup-button"]').click();
+    getsignUpButton() {
+        return cy.xpath('//button[@data-qa="signup-button"]')
     }
 
 

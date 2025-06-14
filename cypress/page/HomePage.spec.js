@@ -1,13 +1,20 @@
-class HomePage{
+class HomePage {
 
-    loggedInUser(user){
-        cy.xpath('//i[@class="fa fa-user"]//ancestor::a').should('contain',user)
+    getSignUpLoginButton(){
+        return cy.xpath('//a[contains(text(),"Signup / Login")]')
     }
 
-    deleteAccount(){
-        cy.xpath('//a[@href="/delete_account"]').click()
+    getLoggedInUserElement(user) {
+        return cy.xpath('//i[@class="fa fa-user"]//ancestor::a')
     }
 
+    getDeleteAccountButton() {
+        return cy.xpath('//a[@href="/delete_account"]')
+    }
+
+    accountDeletedText(){
+        return cy.xpath('//h2[@data-qa="account-deleted"]')
+    }
 }
 
 export default HomePage;
