@@ -4,7 +4,7 @@ class HomePage {
         return cy.xpath('//a[contains(text(),"Signup / Login")]')
     }
 
-    getLoggedInUserElement(user) {
+    getLoggedInUserElement() {
         return cy.xpath('//i[@class="fa fa-user"]//ancestor::a')
     }
 
@@ -14,6 +14,10 @@ class HomePage {
 
     accountDeletedText(){
         return cy.xpath('//h2[@data-qa="account-deleted"]')
+    }
+
+    getLogoutbutton(){
+        return cy.xpath('//a[contains(text(),"Logout")]')
     }
 }
 

@@ -9,7 +9,7 @@ class HomePageActions {
     }
     
     verifyLoggedInUser(user) {
-        homePageObj.getLoggedInUserElement(user).should('contain', user)
+        homePageObj.getLoggedInUserElement().should('contain', user)
     }
 
     clickDeleteAccount() {
@@ -18,6 +18,10 @@ class HomePageActions {
 
     checkIfAccountDeleted(){
         homePageObj.accountDeletedText().should('be.visible')
+    }
+
+    clickLogoutButton(){
+        homePageObj.getLogoutbutton().click()
     }
 
 }

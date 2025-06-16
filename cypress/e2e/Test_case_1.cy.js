@@ -2,7 +2,7 @@ import 'cypress-xpath'
 import { getRegisterData } from '../utils/registerDataCreator.spec.js'
 import { writeLoginData } from '../utils/loginDataWriter.spec.js'
 import HomePageActions from '../pageObject/HomePageObj.spec.js'
-import LoginPageActions from '../pageObject/LoginPageObj,spec.js'
+import LoginPageActions from '../pageObject/LoginPageObj.spec.js'
 import SignUpPageActions from '../pageObject/SignUpPageObj.spec.js'
 
 describe('Register/Login', () => {
@@ -24,8 +24,8 @@ describe('Register/Login', () => {
       home.goToSignUpLoginPage();
       signUp.checkIfLandedInSignUpPage(); //check if the user is in Initial Signup page 
 
-      login.fillUserNameField(data)
-      login.fillEmailField(data)
+      login.fillUserNameFieldSignup(data)
+      login.fillEmailFieldSignup(data)
       login.clickSignUpButton(data)
 
       signUp.checkHeaderInFullSignUpPage(); //check if user is in Full Signup Page
@@ -38,7 +38,7 @@ describe('Register/Login', () => {
 
       signUp.checkIfAccountCreated() //check if the account is created successfully
 
-      writeLoginData(data.email, data.password); //writes the email and password of user used to register, in loginData.json
+      writeLoginData(data.email, data.password, data.userName); //writes the email and password of user used to register, in loginData.json
 
       signUp.clickContinueButton();
       home.verifyLoggedInUser(data.userName);

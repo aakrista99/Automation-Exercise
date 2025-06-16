@@ -1,7 +1,8 @@
-export function writeLoginData(email, password) {
+export function writeLoginData(email, password, userName) {
     let loginData = {
         email,
-        password
+        password,
+        userName
     };
     cy.writeFile('cypress/fixtures/loginData.json', loginData)
 }

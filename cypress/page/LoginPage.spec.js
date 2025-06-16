@@ -1,17 +1,32 @@
 class LoginPage {
 
-    getuserNameField(data) {
+    getUserNameFieldSignup(data) {
         return cy.xpath('//input[@data-qa="signup-name"]')
     }
 
-    getemailField(data) {
+    getEmailFieldSignup(data) {
         return cy.xpath('//input[@data-qa="signup-email"]')
     }
 
-    getsignUpButton() {
+    getSignUpButton() {
         return cy.xpath('//button[@data-qa="signup-button"]')
     }
 
+    getEmailFieldLogin(){
+        return cy.xpath('//input[@data-qa="login-email"]')
+    }
+
+    getPasswordFieldLogin(data){
+        return cy.xpath('//input[@data-qa="login-password"]')
+    }
+
+    getLoginButton(){
+        return cy.xpath('//button[@data-qa="login-button"]')
+    }
+
+    getLoginErrorMessage(){
+        return cy.xpath('//p[contains(text(),"Your email or password is incorrect!")]').should('be.visible')
+    }
 
 }
 
