@@ -31,6 +31,10 @@ class LoginPageActions {
     checkLoginErrorMessage(){
         loginPageObj.getLoginErrorMessage()
     }
+
+    checkSignupErrorMessage(){
+        loginPageObj.getSignupErrorMessage().should('be.visible')
+    }
 }
 
 export default LoginPageActions;

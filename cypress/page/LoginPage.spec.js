@@ -28,6 +28,10 @@ class LoginPage {
         return cy.xpath('//p[contains(text(),"Your email or password is incorrect!")]').should('be.visible')
     }
 
+    getSignupErrorMessage(){
+        return cy.xpath('//p[contains(text(),"Email Address already exist!")]')
+    }
+
 }
 
 export default LoginPage;

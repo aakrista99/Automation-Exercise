@@ -1,13 +1,13 @@
 import HomePage from "../page/HomePage.spec"
 
-const homePageObj = new HomePage()
+const homePageObj = new HomePage();
 
 class HomePageActions {
 
-    goToSignUpLoginPage(){
+    goToSignUpLoginPage() {
         homePageObj.getSignUpLoginButton().click()
     }
-    
+
     verifyLoggedInUser(user) {
         homePageObj.getLoggedInUserElement().should('contain', user)
     }
@@ -16,11 +16,11 @@ class HomePageActions {
         homePageObj.getDeleteAccountButton().click()
     }
 
-    checkIfAccountDeleted(){
+    checkIfAccountDeleted() {
         homePageObj.accountDeletedText().should('be.visible')
     }
 
-    clickLogoutButton(){
+    clickLogoutButton() {
         homePageObj.getLogoutbutton().click()
     }
 
