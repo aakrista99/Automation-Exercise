@@ -24,6 +24,13 @@ class HomePageActions {
         homePageObj.getLogoutbutton().click()
     }
 
+    goToContactUsPage(){
+        homePageObj.getContactUsButton().click()
+    }
+
+    goToHomePage(){
+        homePageObj.getHomeButton().click()
+    }
 }
 
 export default HomePageActions;

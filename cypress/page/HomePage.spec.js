@@ -19,6 +19,15 @@ class HomePage {
     getLogoutbutton(){
         return cy.xpath('//a[contains(text(),"Logout")]')
     }
+
+    getContactUsButton(){
+        return cy.xpath('//a[contains(text(),"Contact us")]')
+    }
+
+    getHomeButton(){
+        return cy.xpath('//a[contains(text(),"Home")]')
+    }
+
 }
 
 export default HomePage;
