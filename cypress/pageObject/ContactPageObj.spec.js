@@ -23,11 +23,11 @@ class ContactPageActions{
     }
 
     uploadFile(){
-        contactPage.getFileUploadButton().selectFile('TestUploadFile.txt')
+        contactPage.getFileUploadButton().selectFile('TestUploadFile.txt')  //TestUploadFile should be in project root folder
     }
 
     clickSubmitButtonAndConfirm(){
-        cy.on('window:confirm',()=>true)
+        cy.on('window:confirm',()=>true)  //If confirmation box appears, auto select confirm/true button
         contactPage.getSubmitButton().click()
     }
 
