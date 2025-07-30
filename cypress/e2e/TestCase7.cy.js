@@ -1,6 +1,7 @@
 import 'cypress-xpath'
 import TestCasesPageObjects from '../pageObject/TestCasesPageObj.spec'
 import HomePageActions from '../pageObject/HomePageObj.spec'
+import { getProductList } from '../utils/getProducts.spec'
 
 
 before(()=>{
@@ -18,4 +19,8 @@ it('Test Case 7 : Verify Test Cases Page', ()=>{
     cy.url().should('contain','test_cases') //partial comparision
     cy.url().should('eq','https://www.automationexercise.com/test_cases') //strict comparision
 
+})
+
+it('does sth',()=>{
+  getProductList()
 })
