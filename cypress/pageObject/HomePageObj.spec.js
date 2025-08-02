@@ -35,6 +35,10 @@ class HomePageActions {
     goToTestCasesPage(){
         homePageObj.getTestCasesButton().click()
     }
+
+    goToProductsPage(){
+        homePageObj.getProductsButton().click()
+    }
 }
 
 export default HomePageActions;

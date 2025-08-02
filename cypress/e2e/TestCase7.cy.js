@@ -1,7 +1,7 @@
 import 'cypress-xpath'
 import TestCasesPageObjects from '../pageObject/TestCasesPageObj.spec'
 import HomePageActions from '../pageObject/HomePageObj.spec'
-import { getProductList } from '../utils/getProducts.spec'
+import { getFirstProductList } from '../utils/getProducts.spec'
 
 
 before(()=>{
@@ -22,5 +22,5 @@ it('Test Case 7 : Verify Test Cases Page', ()=>{
 })
 
 it('does sth',()=>{
-  getProductList()
+  getFirstProductList()
 })

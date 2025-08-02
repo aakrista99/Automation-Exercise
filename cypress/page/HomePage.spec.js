@@ -32,6 +32,9 @@ class HomePage {
         return cy.xpath('//a[contains(text(),"Test Cases")]')
     }
 
+    getProductsButton(){
+        return cy.xpath('//a[contains(text(),"Products")]')
+    }
 }
 
 export default HomePage;
