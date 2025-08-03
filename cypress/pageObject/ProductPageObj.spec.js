@@ -20,6 +20,18 @@ class ProductPageActions{
         productPageObj.getViewProductOfFirstItem(data).click()
     }
 
+    enterSearchText(data){
+        productPageObj.getSearchBox().type(data)
+    }
+
+    clickOnSearchButton(){
+        productPageObj.getSearchButton().click()
+    }
+
+    checkIfSearchedProductIsVisible(data){
+        productPageObj.getSearchedProduct(data).should('be.visible')
+    }
+
 }
 
 export default ProductPageActions;
