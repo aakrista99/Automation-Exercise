@@ -35,6 +35,23 @@ class HomePage {
     getProductsButton(){
         return cy.xpath('//a[contains(text(),"Products")]')
     }
+
+    getCartButton(){
+        return cy.xpath('//a[contains(text(),"Cart")]')
+    }
+
+    getSubscriptionHeader(){
+        return cy.xpath('//h2[text()="Subscription"]')
+    }
+
+    getSubscriptionEmailField(){
+        return cy.xpath('//input[@id="susbscribe_email"]')
+    }
+
+    getSubscriptionSuccessMessage(){
+        return cy.xpath('//div[@class="alert-success alert"]')
+    }
+
 }
 
 export default HomePage;

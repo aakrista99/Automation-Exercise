@@ -36,8 +36,25 @@ class HomePageActions {
         homePageObj.getTestCasesButton().click()
     }
 
+    goToCartPage(){
+        homePageObj.getCartButton().click()
+    }
+
     goToProductsPage(){
         homePageObj.getProductsButton().click()
+    }
+
+    checkIfSubscriptionHeaderIsVisible(){
+        homePageObj.getSubscriptionHeader().should('be.visible')
+    }
+
+    submitSubscriptionEmail(){
+        homePageObj.getSubscriptionEmailField().type('hello123@mailinator.com{enter}')
+    }
+
+    checkSubscriptionSuccessMessage(){
+        homePageObj.getSubscriptionSuccessMessage().should('be.visible')
+        homePageObj.getSubscriptionSuccessMessage().should('have.text','You have been successfully subscribed!')
     }
 }
 
