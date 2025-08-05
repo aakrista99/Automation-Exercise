@@ -10,3 +10,15 @@ export function getFirstProductList() {
 
 }
 
+
+export function getAllProductList() {
+
+    cy.request('https://automationexercise.com/api/productsList').then((response)=>{
+        cy.log(response.body) //response received as JSON string
+        const jsonData = JSON.parse(response.body) //converted JSON string to javascript object
+        const allProducts = JSON.stringify(jsonData.products) //First product related info
+        cy.writeFile('cypress/fixtures/allProducts.json',allProducts) //storing data inside fixtures
+    })
+
+}
+
