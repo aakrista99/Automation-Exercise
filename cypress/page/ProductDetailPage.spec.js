@@ -12,6 +12,14 @@ class ProductDetailPage{
         return cy.xpath('//label//preceding-sibling::span')
     }
 
+    getQuantity(){
+        return cy.xpath('//input[@id="quantity"]')
+    }
+
+    getAddToCartButton(){
+        return cy.xpath('//button[@class="btn btn-default cart"]')
+    }
+
     getProductAvailability(){
         return cy.xpath('//b[text()="Availability:"]')
     }

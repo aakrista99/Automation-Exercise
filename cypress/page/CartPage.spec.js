@@ -1,6 +1,5 @@
 class CartPage{
 
-
     getRowsAfterAddToCart(){
         return cy.xpath('//tbody//tr')
     }

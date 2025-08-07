@@ -3,10 +3,11 @@ import HomePageActions from '../pageObject/HomePageObj.spec';
 import ProductPageActions from '../pageObject/ProductPageObj.spec';
 import CartPageActions from '../pageObject/CartPageObj.spec';
 import { getAllProductList } from '../utils/getProducts.spec';
-
+import ProductDetailPageActions from '../pageObject/ProductDetailPageObj.spec';
 
 const homepage = new HomePageActions();
 const productpage = new ProductPageActions();
+const productdetailpage = new ProductDetailPageActions();
 const cartpage = new CartPageActions();
 
 let name, price, secondname, secondprice, priceNumber;
@@ -56,6 +57,23 @@ describe('Cart Related Test Cases', () => {
         cartpage.checkCartItemPrice(name, price)
         cartpage.checkCartItemPrice(secondname, secondprice)
 
+    })
+
+
+    it('Test Case 13: Verify Product quantity in Cart', () => {
+        homepage.goToProductsPage()
+        productpage.clickOnViewProductOfFirstProduct(name)
+
+        cy.log('Checking if user is navigated to Product detail page')
+        productdetailpage.checkProductName(name)
+        productdetailpage.checkProductPrice(price)
+
+        const quantity = 4
+        productdetailpage.increaseQuantity(quantity)
+        productdetailpage.clickAddToCartButton()
+
+        productpage.clickViewCartLink()
+        cartpage.checkCartItemQuantity(name, quantity - 1)   //quantity-1 because we have done count+1 in checkCartItemQuantity method by default
     })
 
 })

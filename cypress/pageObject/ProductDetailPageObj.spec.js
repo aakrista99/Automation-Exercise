@@ -16,6 +16,14 @@ class ProductDetailPageActions{
         productDetailPageObj.getProductPrice().should('contain.text',data)
     }
 
+    increaseQuantity(data){
+        productDetailPageObj.getQuantity().clear().type(data)
+    }
+
+    clickAddToCartButton(){
+        productDetailPageObj.getAddToCartButton().click()
+    }
+
     checkProductAvailability(){
         productDetailPageObj.getProductAvailability().should('be.visible')
     }
