@@ -32,6 +32,22 @@ class CartPage{
         return cy.xpath('//div[@class="alert-success alert"]')
     }
 
+    getProceedToCheckoutButton(){
+        return cy.xpath('//a[@class="btn btn-default check_out"]')
+    }
+
+    getCheckoutModal(){
+        return cy.xpath('//div[@class="modal-content"]//h4')
+    }
+
+    getRegisterLoginLink(){
+        return cy.xpath('//u[text()="Register / Login"]')
+    }
+
+    getContinueOnCartButton(){
+        return cy.xpath('//button[text()="Continue On Cart"]')
+    }
+    
 }
 
 export default CartPage;

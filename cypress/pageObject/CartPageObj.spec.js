@@ -36,6 +36,14 @@ class CartPageActions{
         cartPageObj.getCartSubscriptionSuccessMessage().should('have.text','You have been successfully subscribed!')
     }
 
+    clickProceedToCheckoutButton(){
+        cartPageObj.getProceedToCheckoutButton().click()
+    }
+
+    clickRegisterLoginLink(){
+        cartPageObj.getRegisterLoginLink().click()
+    }
+
 }
 
 export default CartPageActions;
